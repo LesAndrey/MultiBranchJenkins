@@ -2,7 +2,15 @@ library identifier: 'JenkinsLib@master', retriever: modernSCM(
   [$class: 'GitSCMSource',
    remote: 'https://github.com/LesAndrey/JenkinsLib.git'])
 
-String CronExpr = timeTrigger(currentBuild.getNumber())
+def timeTriggerJenkinsfile(int buildNumber) {
+    if (buildNumber % 2 == 0) {
+        return '*/1 * * * 0-7'
+    }else{
+        return '*/2 * * * 0-7'
+    }
+}
+
+String CronExpr = timeTriggerJenkinsfile(currentBuild.getNumber())
 
 pipeline {
   agent any
