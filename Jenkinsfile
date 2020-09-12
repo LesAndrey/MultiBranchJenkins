@@ -3,7 +3,7 @@ library identifier: 'JenkinsLib@master', retriever: modernSCM(
    remote: 'https://github.com/LesAndrey/JenkinsLib.git'])
 
 def timeTriggerJenkinsfile(int buildNumber) {
-    timeTrigger(buildNumber)
+    myTimeTrigger(buildNumber)
 }
 
 String CronExpr = timeTriggerJenkinsfile(currentBuild.getNumber())
