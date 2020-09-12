@@ -5,7 +5,7 @@ library identifier: 'JenkinsLib@master', retriever: modernSCM(
 pipeline {
   agent any
   environment { 
-        CRON_EXPR = timeTrigger(currentBuild.getNumber())
+        CRON_EXPR = '*/2 * * * 0-7'
   }
   triggers {
     cron(env.CRON_EXPR)
