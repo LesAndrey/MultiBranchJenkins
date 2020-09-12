@@ -4,8 +4,11 @@ library identifier: 'JenkinsLib@master', retriever: modernSCM(
 
 pipeline {
   agent any
+  environment { 
+        CRON_EXPR = timeTrigger(currentBuild.getNumber())
+  }
   triggers {
-    cron('*/1 * * * 0-7')
+    cron(env.CRON_EXPR)
   }
   stages {
     stage('Even Stage') {
