@@ -13,9 +13,9 @@ println CronExpr
 
 pipeline {
   agent any
-  // triggers {
-  //   cron(CronExpr)
-  // }
+  triggers {
+    cron(CronExpr)
+  }
   stages {
     stage('Even Stage') {
       steps {
