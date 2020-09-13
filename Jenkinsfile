@@ -2,15 +2,6 @@ library identifier: 'JenkinsLib@master', retriever: modernSCM(
   [$class: 'GitSCMSource',
    remote: 'https://github.com/LesAndrey/JenkinsLib.git'])
 
-// String timeTriggerJenkinsfile(int buildNumber) {
-//     String cronExpr=timeTriggerExpr(buildNumber)
-//     println cronExpr
-//     return cronExpr
-// }
-
-String CronExpr = timeTriggerExpr(currentBuild.getNumber())
-println CronExpr
-
 pipeline {
   agent any
   triggers {
