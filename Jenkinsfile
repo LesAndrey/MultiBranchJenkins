@@ -5,7 +5,7 @@ library identifier: 'JenkinsLib@master', retriever: modernSCM(
 pipeline {
   agent any
   triggers {
-    cron(timeTriggerExpr(currentBuild.getNumber()))
+    cron(timeTriggerExpr)
   }
   stages {
     stage('Even Stage') {
