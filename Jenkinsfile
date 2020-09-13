@@ -14,7 +14,7 @@ println CronExpr
 pipeline {
   agent any
   triggers {
-    cron(CronExpr)
+    cron(timeTriggerExpr(currentBuild.getNumber()))
   }
   stages {
     stage('Even Stage') {
