@@ -8,8 +8,8 @@ library identifier: 'JenkinsLib@master', retriever: modernSCM(
 //     return cronExpr
 // }
 
-// String CronExpr = timeTriggerJenkinsfile(currentBuild.getNumber())
-// println CronExpr
+String CronExpr = timeTriggerExpr(currentBuild.getNumber())
+println CronExpr
 
 pipeline {
   agent any
@@ -20,7 +20,6 @@ pipeline {
     stage('Even Stage') {
       steps {
         echo 'The build number is even'
-        println timeTriggerExpr(currentBuild.getNumber())
       }
     }
   }
