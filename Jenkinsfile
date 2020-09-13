@@ -2,7 +2,7 @@ library identifier: 'JenkinsLib@master', retriever: modernSCM(
   [$class: 'GitSCMSource',
    remote: 'https://github.com/LesAndrey/JenkinsLib.git'])
 
-String cronExpr=timeTriggerExpr
+String cronExpr=timeTriggerExpr()
 
 pipeline {
   agent any
