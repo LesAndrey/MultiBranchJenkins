@@ -2,10 +2,12 @@ library identifier: 'JenkinsLib@master', retriever: modernSCM(
   [$class: 'GitSCMSource',
    remote: 'https://github.com/LesAndrey/JenkinsLib.git'])
 
+String cron=timeTriggerExpr
+
 pipeline {
   agent any
   triggers {
-    cron(timeTriggerExpr)
+    cron(cron)
   }
   stages {
     stage('Even Stage') {
